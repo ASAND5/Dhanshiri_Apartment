@@ -90,20 +90,30 @@ footer a:hover{text-decoration:underline}
 .wv.t{top:-79px}.wv.b{bottom:-79px;scale:1 -1}
 .wv path{animation:wf 9s ease-in-out infinite alternate}
 @keyframes wf{to{translate:-5% 0}}
-.bld{max-width:460px;margin:auto;width:100%}
-.roof{height:110px;background:linear-gradient(#6b4423,#4a2f17);clip-path:polygon(50% 0,100% 100%,0 100%);margin-inline:-4%}
-.fl{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px;background:var(--br)}
-.fl+.fl{padding-top:0}
-.ap{border:0;border-radius:10px 10px 4px 4px;height:120px;cursor:pointer;font:400 1.5rem 'Young Serif',serif;color:var(--b9);background:linear-gradient(160deg,#ffefb6,#e3a838);filter:brightness(.72) saturate(.7);transition:.5s}
-.ap:hover,.ap.on{filter:none;box-shadow:0 0 50px #ffd36acc;translate:0 -4px}
-.ap.on{animation:fk 3s infinite}
-@keyframes fk{50%{box-shadow:0 0 80px #ffd36a}}
-.gr{height:26px;background:linear-gradient(var(--g7),var(--g9));border-radius:0 0 18px 18px}
 #pn{background:#ffffff12;border:1px solid #ffffff22;border-radius:var(--r);padding:40px;min-height:300px}
 #pn.a{animation:pi .7s}
 @keyframes pi{from{opacity:0;translate:30px 0}}
 #pn span{display:inline-block;margin:0 10px 16px 0;padding:4px 16px;border-radius:99px;background:var(--au);color:var(--b9);font-size:.9rem;font-weight:600}
 
+/* blueprint building */
+.bp{width:100%;height:auto;display:block;border-radius:var(--r);background-color:#1b4a36;background-image:linear-gradient(#ffffff17 1px,transparent 1px),linear-gradient(90deg,#ffffff17 1px,transparent 1px);background-size:22px 22px;border:1px solid #ffffff30;box-shadow:0 30px 80px #0006}
+.bp polygon,.bp line{stroke:#eef5cf;stroke-width:1.2;stroke-linejoin:round}
+.bp .sl{fill:#ffffff0d}.bp .sf{fill:#ffffff22}.bp .rf{fill:#ffffff26}.bp .bw{fill:#ffffff10}.bp .wl{fill:#ffffff22}
+.bp .pk{fill:#ffffff06;stroke-dasharray:6 4}
+.bp .fz{fill:#ffffff0a;transition:fill .4s}
+.bp .gd{stroke-dasharray:5 5;opacity:.5}
+.flat{cursor:pointer;outline:0}
+.flat:hover .fz,.flat.on .fz{fill:#ffd36ae6}
+.flat.on .fz{animation:bpk 3s infinite}
+@keyframes bpk{50%{fill:#ffc247}}
+.flat:focus-visible .fz{stroke:var(--au);stroke-width:3}
+.bp text{font-family:Figtree,sans-serif;fill:#eef5cf;text-anchor:middle;pointer-events:none}
+.bp .cp{text-anchor:start;font-size:14px}
+.bp .ts{font-size:13px}
+.bp .tn{font:400 26px 'Young Serif',serif;fill:#fff}
+.flat:hover text,.flat.on text{fill:var(--b9)}
+.hint{font-size:.95rem;opacity:.7;margin-top:14px}
+  
 /* neighbourhood */
 .nb{background:linear-gradient(170deg,var(--g9),var(--g7));color:#f3efcf}
 .nb h2{color:#fff}
@@ -182,11 +192,9 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
   <svg class="wv t" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40Q360 0 720 40T1440 40V80H0Z"/></svg>
   <svg class="wv b" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40Q360 0 720 40T1440 40V80H0Z"/></svg>
   <div class="in2 two">
-    <div class="bld rv">
-      <div class="roof"></div>
-      <div class="fl"><button class="ap" data-i="2">3</button><button class="ap" data-i="3">4</button></div>
-      <div class="fl"><button class="ap on" data-i="0">1</button><button class="ap" data-i="1">2</button></div>
-      <div class="gr"></div>
+    <div class="rv">
+      <svg id="bp" class="bp" viewBox="0 0 580 380" role="img" aria-label="Isometric plan of the building: two floors, four flats"></svg>
+      <p class="hint">Tap a flat to see its details. The building is 70 ft north–south and 30 ft east–west. North is toward the upper right.</p>
     </div>
     <div>
       <h2 class="rv">Four homes, two floors</h2>
@@ -286,15 +294,27 @@ $$('.rv,.cl,.n').forEach(e=>io.observe(e));
 // 3D tilt on season cards
 $$('.tilt').forEach(e=>{e.onmousemove=v=>{const r=e.getBoundingClientRect(),a=(v.clientX-r.left)/r.width-.5,b=(v.clientY-r.top)/r.height-.5;e.style.transform=`perspective(800px) rotateY(${a*10}deg) rotateX(${-b*10}deg) translateY(-6px)`};e.onmouseleave=()=>e.style.transform=''});
 
-// interactive building: click a lit window
-const A=[['Apartment 1','Ground floor','[00] m²','[0] bedrooms','[Describe this apartment: layout, light, terrace or garden, the view over the fields.]'],
-['Apartment 2','Ground floor','[00] m²','[0] bedrooms','[Describe this apartment.]'],
-['Apartment 3','Upper floor','[00] m²','[0] bedrooms','[Describe this apartment: balcony, sunrise view, ceiling height.]'],
-['Apartment 4','Upper floor','[00] m²','[0] bedrooms','[Describe this apartment.]']];
-function pick(i){const a=A[i],p=$('#pn');$$('.ap').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
-p.innerHTML=`<h3 style="font-size:2rem;margin-bottom:16px">${a[0]}</h3><span>${a[1]}</span><span>${a[2]}</span><span>${a[3]}</span><p>${a[4]}</p>`;
-p.classList.remove('a');void p.offsetWidth;p.classList.add('a')}
-$$('.ap').forEach(b=>b.onclick=()=>pick(+b.dataset.i));pick(0);
+// blueprint building: 70 ft (N-S) x 30 ft (E-W), two floors
+(function(){
+const P=(x,y,z)=>[230+4.33*(x-y),330-1.25*(x+y)-5*z];
+const pt=a=>a.map(p=>P(...p).map(n=>n.toFixed(1))).join(' ');
+const pg=(a,c)=>`<polygon class="${c}" points="${pt(a)}"/>`;
+const ln=(a,b,c='l')=>{const[p,q]=[P(...a),P(...b)];return `<line class="${c}" x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}"/>`};
+const slab=(z,c)=>pg([[0,0,z],[70,0,z],[70,30,z],[0,30,z]],c)+pg([[0,0,z-1.5],[70,0,z-1.5],[70,0,z],[0,0,z]],'sf')+pg([[0,0,z-1.5],[0,30,z-1.5],[0,30,z],[0,0,z]],'sf');
+const walls=z=>pg([[70,0,z],[70,30,z],[70,30,z+8],[70,0,z+8]],'bw')+pg([[0,30,z],[70,30,z],[70,30,z+8],[0,30,z+8]],'bw');
+const stair=z=>pg([[31,6,z],[39,6,z],[39,23,z],[31,23,z]],'bw')+[...Array(8)].map((_,k)=>ln([31,6+k*2.4,z],[39,6+k*2.4,z])).join('');
+const flat=(i,x0,z,d=30)=>{const k=d/30,c=P(x0+14,d/2,z),w=(a,b)=>pg([[x0+a[0],a[1]*k,z],[x0+b[0],b[1]*k,z],[x0+b[0],b[1]*k,z+4],[x0+a[0],a[1]*k,z+4]],'wl');
+return `<g class="flat" data-i="${i}" tabindex="0" role="button" aria-label="Apartment ${i+1}">`+pg([[x0,0,z],[x0+28,0,z],[x0+28,d,z],[x0,d,z]],'fz')+w([0,13],[15,13])+w([15,0],[15,22])+w([15,22],[28,22])
++`<text class="tn" x="${c[0]}" y="${c[1]}">${i+1}</text><text class="ts" x="${c[0]}" y="${c[1]+17}">28 × ${d} ft</text></g>`};
+const park=z=>{const c=P(14,22.5,z);return pg([[0,15,z],[28,15,z],[28,30,z],[0,30,z]],'pk')+ln([3,17,z],[3,28,z],'gd')+ln([25,17,z],[25,28,z],'gd')
++`<text class="ts" x="${c[0]}" y="${c[1]-2}">Parking</text><text class="ts" x="${c[0]}" y="${c[1]+14}">28 × 15 ft</text>`};
+const lv=(z,a,b,d=30)=>slab(z,'sl')+walls(z)+stair(z)+flat(a,0,z,d)+(d<30?park(z):'')+flat(b,42,z);
+const cap=(t,y)=>`<text class="cp" x="8" y="${y}">${t}</text>`;
+const m1=P(35,-5,0),m2=P(-5,15,0);
+$('#bp').innerHTML=[[0,0],[70,0],[70,30],[0,30]].map(c=>ln([...c,0],[...c,32],'gd')).join('')
++lv(0,0,1,15)+lv(16,2,3)+slab(32,'rf')+cap('Ground floor',286)+cap('Upper floor',206)+cap('Flat roof',126)
++ln([0,-5,0],[70,-5,0])+`<text class="ts" transform="translate(${m1[0]} ${m1[1]+17}) rotate(-16)">70 ft north–south</text>`
++ln([-5,0,0],[-5,30,0])+`<text class="ts" transform="translate(${m2[0]} ${m2[1]+17}) rotate(16)">30 ft east–west</text>`})();
 </script>
 </body>
 </html>
