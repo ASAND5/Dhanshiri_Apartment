@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dhanshiri | Apartment Building</title>
-<meta name="description" content="[Short description of the building for Google]">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +39,8 @@ a{color:inherit}
 /* nav */
 nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;color:#fff;transition:.5s}
 nav.s{background:#f4f1d8ee;color:var(--b9);backdrop-filter:blur(12px);padding-block:10px;box-shadow:0 4px 30px #3d6b3433}
-nav b{font:400 1.4rem 'Young Serif',serif}
+nav b a{text-decoration:none;color:inherit}
+nav b a:hover{color:var(--au)}
 nav div a{margin-left:28px;text-decoration:none;position:relative}
 nav div a::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:var(--au);scale:0 1;transform-origin:left;transition:.4s}
 nav div a:hover::after{scale:1}
@@ -85,7 +85,7 @@ footer a:hover{text-decoration:underline}
 .tall{aspect-ratio:4/5}
   
 /* building */
-.dk{background:radial-gradient(circle at 80% 0,#3d6b3455,#0000 50%),var(--b9);color:#f6ecc9;margin-block:80px}
+.dk{background:var(--b9);color:#f6ecc9}
 .wv{position:absolute;left:0;width:100%;height:80px;fill:var(--b9)}
 .wv.t{top:-79px}.wv.b{bottom:-79px;scale:1 -1}
 .wv path{animation:wf 9s ease-in-out infinite alternate}
@@ -96,7 +96,7 @@ footer a:hover{text-decoration:underline}
 #pn span{display:inline-block;margin:0 10px 16px 0;padding:4px 16px;border-radius:99px;background:var(--au);color:var(--b9);font-size:.9rem;font-weight:600}
 
 /* blueprint building */
-.bp{width:100%;height:auto;display:block;border-radius:var(--r);background-color:#1b4a36;background-image:linear-gradient(#ffffff17 1px,transparent 1px),linear-gradient(90deg,#ffffff17 1px,transparent 1px);background-size:22px 22px;border:1px solid #ffffff30;box-shadow:0 30px 80px #0006}
+.bp{width:100%;height:auto;display:block;border-radius:var(--r);background:#1b4a36;border:1px solid #ffffff30;box-shadow:0 30px 80px #0006}
 .bp polygon,.bp line{stroke:#eef5cf;stroke-width:1.2;stroke-linejoin:round}
 .bp .sl{fill:#ffffff0d}.bp .sf{fill:#ffffff22}.bp .rf{fill:#ffffff26}.bp .bw{fill:#ffffff10}.bp .wl{fill:#ffffff22}
 .bp .pk{fill:#ffffff06;stroke-dasharray:6 4}
@@ -156,18 +156,17 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 <!-- HOW TO EDIT: texts in [brackets] are placeholders. Put photos in an /images folder using the names shown inside each empty photo box. -->
 <div id="bar"></div>
 <nav>
-  <b><i class="fa-solid fa-wheat-awn"></i>Dhanshiri</b>
+  <b><a href="https://asand5.github.io/Dhanshiri_Apartment/" target="_blank" rel="noopener">Dhanshiri</a></b>
   <div><a href="#about">About</a><a href="#units">Apartment and Spaces</a><a href="#area">Neighbourhood</a><!-- a href="#gallery">Gallery</a --><!-- a href="#seasons">Seasons</a--><a href="#contact">Contact</a></div>
 </nav>
 
 <header class="hero" id="top">
-  <!-- figure class="ph hbg" data-n="images/hero.jpg" data-p=".25"><img src="images/hero.jpg" alt="[Describe hero photo]" onerror="this.remove()"></figure -->
   <div class="sun"></div><div class="cd"></div><div class="cd" style="top:34%;animation-delay:-35s;scale:1.4"></div>
   <canvas id="fx"></canvas>
   <div class="ht" data-p="-.12">
-    <h1 class="sp">Wake up inside the golden fields</h1>
+    <h1 class="sp">Wake up inside the green fields</h1>
     <p class="fd"></p>
-    <a class="btn fd" href="#units">Meet the apartments</a>
+    <a class="btn fd" href="#units">The apartments</a>
     <a class="btn fd o" href="https://maps.app.goo.gl/mHGfE4ydK5eJAVnJA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> View on Google Maps</a>
   </div>
   <svg class="rice" id="r1" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true"></svg>
@@ -179,20 +178,18 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
   <figure class="ph tall cl" data-n="images/about.jpg"><img src="images/Gemini_Generated_Image_b9ffffb9ffffb9ff.jfif" alt="Face-view" loading="lazy" onerror="this.remove()"></figure>
   <div>
     <h2 class="rv">Dhanshiri: A Journey from 2019</h2>
-    <p class="rv" style="--i:1">Dhanshiri was built, funded, and closely supervised by the owner, M A Wadud Miah. It opened for rentals in 2020. Since then, more than 20 souls have lived here.</p>
+    <p class="rv" style="--i:1">Dhanshiri was built, funded, and closely supervised by the owner, M A Wadud Miah. It opened for rentals in 2020. Since then, 5 families have lived here.</p>
     <p class="rv" style="--i:2;margin-top:16px">Dhanshiri is a comfortable solitude from the bustle of Shathibari bazar, yet not too far from it. The greenery around, pleasing paddy fields, and the ponds of Fish Seed Multiplication Farm provide a calm environment to reside in.</p>
     <div class="stats rv" style="--i:3">
       <div><b><span class="n" data-n="4">0</span></b>apartments</div>
       <div><b><span class="n" data-n="2">0</span></b>floors</div>
-      <div><b>1 car</b>Interchangably 9 bike parking</div>
+      <div><b>Parking</b>Interchangably for 1 car or 9 bikes</div>
       <div><b><span class="n" data-n="360" data-s="°">0</span></b>of green views</div>
     </div>
   </div>
 </div></section>
 
 <section id="units" class="dk">
-  <svg class="wv t" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40Q360 0 720 40T1440 40V80H0Z"/></svg>
-  <svg class="wv b" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40Q360 0 720 40T1440 40V80H0Z"/></svg>
   <div class="in2 two">
     <div class="rv">
       <svg id="bp" class="bp" viewBox="0 0 580 380" role="img" aria-label="Isometric plan of the building: two floors, four flats"></svg>
@@ -217,7 +214,7 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
     <figure class="ph cl" data-n="images/g6.jpg"><img src="images/g6.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
   </div>
 </div-->
-<div class="mq" aria-hidden="true"><div>Enjoy your stay with family; safe and sound; minimal and modern designs; installable accessories such as AC and geyser. Enjoy your stay with family; safe and sound; minimal and modern designs; installable accessories such as AC and geyser. </div></div>
+<div class="mq" aria-hidden="true"><div>Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens.</div></div>
 </section>
 
 <section id="area" class="nb"><div class="in2">
@@ -249,17 +246,18 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
   <div>
     <h2 class="rv">Pay a visit or talk to the owner</h2>
     <p class="rv" style="--i:1">Meet M A Wadud Miah, BPP</br>Owner</br>MWO (Rtd.), Bangladesh Air Force</p>
-    <p class="rv" style="--i:2;margin-top:16px">+88 01678-044251<br>ranubaf20@gmail.com</p>
+    <p class="rv" style="--i:2;margin-top:16px">+88 01678-044251<br><a href="mailto:aanubaf20@gmail.com">ranubaf20@gmail.com</a></p>
   </div>
-  <form id="cf" class="rv" style="--i:1" action="https://docs.google.com/forms/d/e/1FAIpQLSfC42u-xGSlBP0ceO0_uxU0ZrA28dhLHxIhDU4wasMQtimepg/viewform?usp=publish-editor">
-  <input name="entry.#" placeholder="Your name" required aria-label="Your name">
-  <input name="entry.#" type="email" placeholder="Your email" required aria-label="Your email">
-  <textarea name="entry.#" rows="4" placeholder="Which apartment interests you?" aria-label="Message"></textarea>
+  <form id="cf" class="rv" style="--i:1" action="https://formspree.io/f/xkjooong" method="POST">
+  <input name="name" placeholder="Your name" required aria-label="Your name">
+  <input name="email" type="email" placeholder="Your email" required aria-label="Your email">
+  <textarea name="message" rows="4" placeholder="Which apartment interests you?" aria-label="Message"></textarea>
+  <input name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
   <button class="btn" type="submit">Send message</button>
 </form>
 </div></section>
 
-<footer><a href="https://maps.app.goo.gl/mHGfE4ydK5eJAVnJA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Find us on Google Maps</a><br>© 2026 Dhanshiri. Durgapur, Mithapukur, Rangpur.</footer>
+<footer><a href="https://maps.app.goo.gl/mHGfE4ydK5eJAVnJA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Find us on Google Maps</a><br>© 2026 Dhanshiri. Durgapur, Mithapukur, Rangpur.</br><small>Contact form powered by <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a></small></footer>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
@@ -322,13 +320,6 @@ $('#bp').innerHTML=[[0,0],[70,0],[70,30],[0,30]].map(c=>ln([...c,0],[...c,32],'g
 +lv(0,0,1,15)+lv(16,2,3)+slab(32,'rf')+cap('Ground floor',286)+cap('Upper floor',206)+cap('Rooftop',126)
 +ln([0,-5,0],[70,-5,0])+`<text class="ts" transform="translate(${m1[0]} ${m1[1]+17}) rotate(-16)">70 ft north–south</text>`
 +ln([-5,0,0],[-5,30,0])+`<text class="ts" transform="translate(${m2[0]} ${m2[1]+17}) rotate(16)">30 ft east–west</text>`})();
-
-// contact form: sends the answers to your Google Form
-$('#cf').onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button');
-b.disabled=true;b.textContent='Sending...';
-try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))});
-f.innerHTML='<h3>Thank you. We will reply soon.</h3>'}
-catch{b.disabled=false;b.textContent='Send message';alert('Could not send. Please try again.')}};
   
 // apartment details shown in the panel (edit the [brackets])
 const A=[['Apartment 1','Ground floor, North','≈ 28 × 15 ft','1 bedroom','Mini unit with 2 rooms, kitchen, and a bathroom. A beautiful green view of the east side of the building.','Parking bay 28 × 15 ft'],
