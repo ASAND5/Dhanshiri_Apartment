@@ -117,12 +117,14 @@ footer a:hover{text-decoration:underline}
 /* neighbourhood */
 .nb{background:linear-gradient(170deg,var(--g9),var(--g7));color:#f3efcf}
 .nb h2{color:#fff}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:48px}
-.tile{padding:34px;border-radius:var(--r);background:#ffffff14;border:1px solid #ffffff26}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.tile{padding:30px 26px;border-radius:var(--r);background:#ffffff14;border:1px solid #ffffff26}
 .tile i{display:block;font-size:1.9rem;color:var(--au);margin-bottom:18px;transition:transform .5s}
 .tile:hover i{transform:scale(1.25) rotate(-8deg)}
-.tile b{display:block;font:400 2.6rem 'Young Serif',serif;line-height:1.1;color:#fff}
+.tile b{display:block;font:400 2.2rem 'Young Serif',serif;line-height:1.1;color:#fff}
 .tile small{display:block;margin-bottom:12px;font-size:1rem;color:var(--st)}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.tiles{grid-template-columns:1fr}}
   
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));grid-auto-rows:250px;gap:18px;margin-top:48px}
@@ -155,7 +157,7 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 <div id="bar"></div>
 <nav>
   <b><i class="fa-solid fa-wheat-awn"></i>Dhanshiri</b>
-  <div><a href="#about">About</a><a href="#units">Apartment and Spaces</a><a href="#area">Neighbourhood</a><a href="#gallery">Gallery</a><!-- a href="#seasons">Seasons</a--><a href="#contact">Contact</a></div>
+  <div><a href="#about">About</a><a href="#units">Apartment and Spaces</a><a href="#area">Neighbourhood</a><!-- a href="#gallery">Gallery</a --><!-- a href="#seasons">Seasons</a--><a href="#contact">Contact</a></div>
 </nav>
 
 <header class="hero" id="top">
@@ -164,7 +166,7 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
   <canvas id="fx"></canvas>
   <div class="ht" data-p="-.12">
     <h1 class="sp">Wake up inside the golden fields</h1>
-    <p class="fd">[One sentence that describes the building and the view.]</p>
+    <p class="fd"></p>
     <a class="btn fd" href="#units">Meet the apartments</a>
     <a class="btn fd o" href="https://maps.app.goo.gl/mHGfE4ydK5eJAVnJA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> View on Google Maps</a>
   </div>
@@ -176,13 +178,13 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 <section id="about"><div class="in2 two">
   <figure class="ph tall cl" data-n="images/about.jpg"><img src="images/about.jpg" alt="[Describe photo]" loading="lazy" onerror="this.remove()"></figure>
   <div>
-    <h2 class="rv">[A headline about the place]</h2>
-    <p class="rv" style="--i:1">[Write the story of the building here. Who built it, why it stands among the rice fields, and what living here feels like in the morning.]</p>
-    <p class="rv" style="--i:2;margin-top:16px">[A second paragraph. Mention quiet, fresh air, light and distance to town.]</p>
+    <h2 class="rv">Dhanshiri: A Journey from 2019</h2>
+    <p class="rv" style="--i:1">Dhanshiri was built, funded, and closely supervised by the owner, Md A Wadud Miah. It opened for stays in 2020. Since then, more than 20 souls have lived here.</p>
+    <p class="rv" style="--i:2;margin-top:16px">Dhanshiri is a comfortable solitude from the bustle of Shathibari bazar, yet not too far from it. The greenery around, pleasing paddy fields, and the ponds of Fish Seed Multiplication Farm provide a calm environment to reside in.</p>
     <div class="stats rv" style="--i:3">
       <div><b><span class="n" data-n="4">0</span></b>apartments</div>
       <div><b><span class="n" data-n="2">0</span></b>floors</div>
-      <div><b>1 car</b>or 9 bikes can park</div>
+      <div><b>1 car</b>Interchangably 9 bike parking</div>
       <div><b><span class="n" data-n="360" data-s="°">0</span></b>of green views</div>
     </div>
   </div>
@@ -194,7 +196,7 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
   <div class="in2 two">
     <div class="rv">
       <svg id="bp" class="bp" viewBox="0 0 580 380" role="img" aria-label="Isometric plan of the building: two floors, four flats"></svg>
-      <p class="hint">Tap a flat to see its details. The building is 70 ft north–south and 30 ft east–west. The parking is in the north, and the south is toward the upper right.</p>
+      <p class="hint">Tap a flat to see its details. The building is 70 ft north–south and 30 ft east–west.</br>The parking is in the north, and the south is toward the upper right.</p>
     </div>
     <div>
       <h2 class="rv">Four homes, two floors</h2>
@@ -205,17 +207,21 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 
 <section id="area" class="nb"><div class="in2">
   <h2 class="rv">Neighbourhood</h2>
-  <p class="rv" style="--i:1">[One sentence about the convenience of the location.]</p>
+  <p class="rv" style="--i:1">Situated close to the masjid, schools, college, bazar, and most importantly, the Dhaka-Rangpur highway.</p>
   <div class="tiles">
     <div class="tile rv"><i class="fa-solid fa-road"></i><b><span class="n" data-n="300" data-s=" yd">0</span></b><small>from the highway</small><p>Walkable distance and 60 feet wide paved road.</p></div>
     <div class="tile rv" style="--i:1"><i class="fa-solid fa-mosque"></i><b><span class="n" data-n="200" data-s=" yd">0</span></b><small>to Durgapur Central Jam-e Mosque</small><p>A 1-minutes-walk distance.</p></div>
     <div class="tile rv" style="--i:2"><i class="fa-solid fa-school"></i><b><span class="n" data-n="500" data-s=" yd">0</span></b><small>to Shathibari ML High School</small><p>A 2-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:3"><i class="fa-solid fa-store"></i><b>0.5 km</b><small>to Shathibari Bazar</small><p>If you know, you know why Shathibari is important.</p></div>
+    <div class="tile rv" style="--i:3"><i class="fa-solid fa-store"></i><b>0.5 km</b><small>to Shathibari Bazar</small><p>Shathibari Bazar has everything and is soon to be a Poura Shova.</p></div>
+    <div class="tile rv" style="--i:4"><i class="fa-solid fa-school"></i><b><span class="n" data-n="1000" data-s=" yd">0</span></b><small>to Shathibari College</small><p>A 10-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:5"><i class="fa-solid fa-city"></i><b>25 km</b><small>to Rangpur City</small><p>Nearest city; takes less than an hour to go.</p></div>
+    <div class="tile rv" style="--i:6"><i class="fa-solid fa-landmark"></i><b>300 km</b><small>to Dhaka City</small><p>Capital of Bangladesh; takes 5 to 6 hours to go.</p></div>
+    <div class="tile rv" style="--i:7"><i class="fa-solid fa-star"></i><b>400 and 700 km</b><small>to Thimpu and Kathmandu</small><p>The nearest foreign capitals.</p></div>
   </div>
 </div></section>
 
 <section id="gallery"><div class="in2">
-  <h2 class="rv">[Gallery headline]</h2>
+  <!--h2 class="rv">[Gallery headline]</h2>
   <p class="rv" style="--i:1">[A short line introducing the photos.]</p>
   <div class="gal">
     <figure class="ph cl" data-n="images/g1.jpg"><img src="images/g1.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
@@ -225,8 +231,8 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
     <figure class="ph cl" data-n="images/g5.jpg"><img src="images/g5.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
     <figure class="ph cl" data-n="images/g6.jpg"><img src="images/g6.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
   </div>
-</div>
-<div class="mq" aria-hidden="true"><div>Green rice, golden rice, harvest. Green rice, golden rice, harvest. Green rice, golden rice, harvest. Green rice, golden rice, harvest. </div></div>
+</div-->
+<div class="mq" aria-hidden="true"><div>Enjoy your stay with family, safe and sound; AC and geyser can be installed. Enjoy your stay with family, safe and sound; AC and geyser can be installed. Enjoy your stay with family, safe and sound; AC and geyser can be installed. </div></div>
 </section>
 
 <!-- section id="seasons" class="se"><div class="in2">
@@ -241,16 +247,16 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 
 <section id="contact"><div class="in2 two">
   <div>
-    <h2 class="rv">Come and see it</h2>
-    <p class="rv" style="--i:1">[Address, how to get here, and what to expect on a visit.]</p>
-    <p class="rv" style="--i:2;margin-top:16px">[Phone]<br>[Email]<br>[Visiting hours]</p>
+    <h2 class="rv">Pay a visit or talk to the owner</h2>
+    <p class="rv" style="--i:1">Meet Md A Wadud Miah, BPP</br>MWO (Rtd.), Bangladesh Air Force</p>
+    <p class="rv" style="--i:2;margin-top:16px">+88 01678-044251<br>ranubaf20@gmail.com</p>
   </div>
-  <form class="rv" style="--i:1" onsubmit="event.preventDefault();this.innerHTML='<h3>Thank you. We will reply soon.</h3>'">
-    <input placeholder="Your name" required aria-label="Your name">
-    <input type="email" placeholder="Your email" required aria-label="Your email">
-    <textarea rows="4" placeholder="Which apartment interests you?" aria-label="Message"></textarea>
-    <button class="btn" type="submit">Send message</button>
-  </form>
+  <form id="cf" class="rv" style="--i:1" action="https://docs.google.com/forms/d/e/1FAIpQLSfC42u-xGSlBP0ceO0_uxU0ZrA28dhLHxIhDU4wasMQtimepg/viewform?usp=publish-editor">
+  <input name="entry.#" placeholder="Your name" required aria-label="Your name">
+  <input name="entry.#" type="email" placeholder="Your email" required aria-label="Your email">
+  <textarea name="entry.#" rows="4" placeholder="Which apartment interests you?" aria-label="Message"></textarea>
+  <button class="btn" type="submit">Send message</button>
+</form>
 </div></section>
 
 <footer><a href="https://maps.app.goo.gl/mHGfE4ydK5eJAVnJA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Find us on Google Maps</a><br>© 2026 Dhanshiri. Durgapur, Mithapukur, Rangpur.</footer>
@@ -313,15 +319,22 @@ const lv=(z,a,b,d=30)=>slab(z,'sl')+walls(z)+stair(z)+flat(a,0,z,d,d<30?15-PK:0)
 const cap=(t,y)=>`<text class="cp" x="8" y="${y}">${t}</text>`;
 const m1=P(35,-5,0),m2=P(-5,15,0);
 $('#bp').innerHTML=[[0,0],[70,0],[70,30],[0,30]].map(c=>ln([...c,0],[...c,32],'gd')).join('')
-+lv(0,0,1,15)+lv(16,2,3)+slab(32,'rf')+cap('Ground floor',286)+cap('Upper floor',206)+cap('Flat roof',126)
++lv(0,0,1,15)+lv(16,2,3)+slab(32,'rf')+cap('Ground floor',286)+cap('Upper floor',206)+cap('Rooftop',126)
 +ln([0,-5,0],[70,-5,0])+`<text class="ts" transform="translate(${m1[0]} ${m1[1]+17}) rotate(-16)">70 ft north–south</text>`
 +ln([-5,0,0],[-5,30,0])+`<text class="ts" transform="translate(${m2[0]} ${m2[1]+17}) rotate(16)">30 ft east–west</text>`})();
 
+// contact form: sends the answers to your Google Form
+$('#cf').onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button');
+b.disabled=true;b.textContent='Sending...';
+try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))});
+f.innerHTML='<h3>Thank you. We will reply soon.</h3>'}
+catch{b.disabled=false;b.textContent='Send message';alert('Could not send. Please try again.')}};
+  
 // apartment details shown in the panel (edit the [brackets])
-const A=[['Apartment 1','Ground floor, north','≈ 28 × 15 ft','1 bedroom','Mini unit with 2 rooms, kitchen, and bathroom. A beautiful green view of the east side of the building.','Parking bay 28 × 15 ft'],
-['Apartment 2','Ground floor, south','≈ 28 × 30 ft','2 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.'],
-['Apartment 3','Upper floor, north','≈ 28 × 30 ft','3 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and north side of the building.'],
-['Apartment 4','Upper floor, south','≈ 28 × 30 ft','2 bedrooms','2 balconies, huge dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.']];
+const A=[['Apartment 1','Ground floor, North','≈ 28 × 15 ft','1 bedroom','Mini unit with 2 rooms, kitchen, and a bathroom. A beautiful green view of the east side of the building.','Parking bay 28 × 15 ft'],
+['Apartment 2','Ground floor, South','≈ 28 × 30 ft','2 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.'],
+['Apartment 3','Upper floor, North','≈ 28 × 30 ft','3 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and north side of the building.'],
+['Apartment 4','Upper floor, South','≈ 28 × 30 ft','2 bedrooms','2 balconies, huge dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.']];
 function pick(i){const a=A[i],p=$('#pn');$$('.flat').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
 p.innerHTML=`<h3 style="font-size:2rem;margin-bottom:16px">${a[0]}</h3>${a.slice(1,4).concat(a[5]||[]).map(t=>`<span>${t}</span>`).join('')}<p>${a[4]}</p>`;
 p.classList.remove('a');void p.offsetWidth;p.classList.add('a')}
