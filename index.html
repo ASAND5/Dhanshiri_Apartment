@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[Building Name] | Home above the rice fields</title>
+<meta name="description" content="[Short description of the building for Google]">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--g9:#1c3524;--g7:#3d6b34;--g5:#86a339;--au:#d9a23b;--st:#efd68f;--br:#8a5a2b;--b9:#2e1f10;--bg:#e9efcf;--r:24px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:300 18px/1.75 Figtree,system-ui,sans-serif;color:var(--b9);background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.1}
+h2{font-size:clamp(2rem,5vw,3.6rem);margin-bottom:22px}
+p{max-width:60ch}
+section{padding:130px 6vw;position:relative}
+.in2{max-width:1180px;margin:auto}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:64px;align-items:center}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--au);outline-offset:3px}
+/* reveal */
+.rv{opacity:0;translate:0 50px;transition:opacity 1s,translate 1.1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*.14s)}
+.rv.in{opacity:1;translate:0 0}
+.cl{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
+.cl.in{clip-path:inset(0)}
+/* image placeholders: drop a file in /images and it appears */
+.ph{position:relative;overflow:hidden;border-radius:var(--r);background:linear-gradient(135deg,var(--g7),var(--au) 70%,var(--br));min-height:220px}
+.ph::after{content:attr(data-n);position:absolute;inset:0;display:grid;place-items:center;color:#fffa;font-size:14px;letter-spacing:.06em}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.08)}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;color:#fff;transition:.5s}
+nav.s{background:#f4f1d8ee;color:var(--b9);backdrop-filter:blur(12px);padding-block:10px;box-shadow:0 4px 30px #3d6b3433}
+nav b{font:400 1.4rem 'Young Serif',serif}
+nav div a{margin-left:28px;text-decoration:none;position:relative}
+nav div a::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:var(--au);scale:0 1;transform-origin:left;transition:.4s}
+nav div a:hover::after{scale:1}
+#bar{position:fixed;top:0;left:0;height:4px;width:100%;z-index:60;background:linear-gradient(90deg,var(--g5),var(--au),var(--br));transform:scaleX(0);transform-origin:left}
+.btn{display:inline-block;padding:15px 34px;border-radius:99px;background:var(--au);color:var(--b9);font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem;position:relative;overflow:hidden;transition:.4s}
+.btn::before{content:'';position:absolute;inset:0;background:#fff7;translate:-110% 0;skew:-20deg;transition:.6s}
+.btn:hover::before{translate:110% 0}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px #d9a23b66}
+/* hero */
+.hero{min-height:100svh;padding:0;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:linear-gradient(180deg,var(--g9),var(--g7) 50%,var(--au))}
+.hbg{position:absolute;inset:-8% 0;border-radius:0}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,#1c352499,#0000 45%,#2e1f1055)}
+.sun{position:absolute;z-index:1;right:12%;top:16%;width:280px;height:280px;border-radius:50%;background:radial-gradient(#fff3c0,#ffd36a 35%,#ffd36a00 70%);animation:pl 7s ease-in-out infinite alternate}
+@keyframes pl{to{scale:1.3;opacity:.7}}
+.cd{position:absolute;z-index:2;top:22%;left:-300px;width:260px;height:50px;border-radius:50px;background:#fff3;filter:blur(12px);animation:dr 70s linear infinite}
+@keyframes dr{to{translate:calc(100vw + 600px) 0}}
+#fx{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.ht{position:relative;z-index:4;padding:0 6vw 120px}
+.ht h1{font-size:clamp(2.8rem,9vw,7.5rem);text-shadow:0 6px 40px #0006}
+.ht p{margin:26px auto 36px;font-size:1.25rem;text-shadow:0 2px 20px #0008}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em}
+.w i{display:inline-block;font-style:normal;translate:0 115%;rotate:9deg;animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.3s + var(--i)*.045s)}
+@keyframes up{to{translate:0 0;rotate:0deg}}
+.ht .fd{opacity:0;animation:fd 1.2s 1.6s forwards}
+@keyframes fd{to{opacity:1}}
+.rice{position:absolute;z-index:3;left:0;bottom:-2px;width:100%;height:36vh;min-height:200px;pointer-events:none}
+.st{animation:sw var(--a) ease-in-out infinite alternate;animation-delay:var(--d);transform-origin:0 0}
+@keyframes sw{from{rotate:-4deg}to{rotate:4deg}}
+.sc{position:absolute;z-index:5;bottom:26px;left:50%;width:2px;height:54px;background:#fff9;overflow:hidden}
+.sc::after{content:'';position:absolute;inset:0;background:var(--au);animation:sd 2s infinite}
+@keyframes sd{from{translate:0 -100%}to{translate:0 100%}}
+/* about */
+.stats{display:flex;gap:44px;margin-top:36px;flex-wrap:wrap}
+.stats b{display:block;font:400 3.2rem 'Young Serif',serif;color:var(--g7);line-height:1}
+.n::after{content:attr(data-s)}
+.tall{aspect-ratio:4/5}
+/* building */
+.dk{background:radial-gradient(circle at 80% 0,#3d6b3455,#0000 50%),var(--b9);color:#f6ecc9;margin-block:80px}
+.wv{position:absolute;left:0;width:100%;height:80px;fill:var(--b9)}
+.wv.t{top:-79px}.wv.b{bottom:-79px;scale:1 -1}
+.wv path{animation:wf 9s ease-in-out infinite alternate}
+@keyframes wf{to{translate:-5% 0}}
+.bld{max-width:460px;margin:auto;width:100%}
+.roof{height:110px;background:linear-gradient(#6b4423,#4a2f17);clip-path:polygon(50% 0,100% 100%,0 100%);margin-inline:-4%}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px;background:var(--br)}
+.fl+.fl{padding-top:0}
+.ap{border:0;border-radius:10px 10px 4px 4px;height:120px;cursor:pointer;font:400 1.5rem 'Young Serif',serif;color:var(--b9);background:linear-gradient(160deg,#ffefb6,#e3a838);filter:brightness(.72) saturate(.7);transition:.5s}
+.ap:hover,.ap.on{filter:none;box-shadow:0 0 50px #ffd36acc;translate:0 -4px}
+.ap.on{animation:fk 3s infinite}
+@keyframes fk{50%{box-shadow:0 0 80px #ffd36a}}
+.gr{height:26px;background:linear-gradient(var(--g7),var(--g9));border-radius:0 0 18px 18px}
+#pn{background:#ffffff12;border:1px solid #ffffff22;border-radius:var(--r);padding:40px;min-height:300px}
+#pn.a{animation:pi .7s}
+@keyframes pi{from{opacity:0;translate:30px 0}}
+#pn span{display:inline-block;margin:0 10px 16px 0;padding:4px 16px;border-radius:99px;background:var(--au);color:var(--b9);font-size:.9rem;font-weight:600}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));grid-auto-rows:250px;gap:18px;margin-top:48px}
+.gal .ph:nth-child(1),.gal .ph:nth-child(4){grid-row:span 2}
+.gal .ph:nth-child(3){grid-column:span 2}
+.mq{overflow:hidden;white-space:nowrap;margin-top:70px;font:400 clamp(2.5rem,8vw,6rem) 'Young Serif',serif;color:#3d6b3433}
+.mq div{display:inline-block;animation:mq 30s linear infinite}
+@keyframes mq{to{translate:-50% 0}}
+/* seasons */
+.se{background:linear-gradient(170deg,var(--g7),var(--g5) 30%,var(--au) 65%,var(--br));color:#fff}
+.se h2{text-shadow:0 2px 20px #0004}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px;margin-top:50px}
+.card{background:#fff;color:var(--b9);border-radius:var(--r);padding:14px 14px 30px;transition:transform .2s;box-shadow:0 20px 50px #2e1f1033}
+.card h3{margin:22px 14px 8px;font-size:1.7rem}
+.card p{margin-inline:14px}
+/* contact */
+form{display:grid;gap:18px}
+input,textarea{font:inherit;padding:14px 4px;border:0;border-bottom:2px solid #8a5a2b66;background:none;transition:.3s;width:100%}
+input:focus,textarea:focus{outline:0;border-color:var(--g7);padding-left:14px}
+footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;font-size:.95rem}
+@media(max-width:760px){nav div a:not(:last-child){display:none}section{padding-block:90px}.gal .ph{grid-row:auto!important;grid-column:auto!important}.sun{width:180px;height:180px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.cl{opacity:1;translate:none;clip-path:none}.w i{translate:none;rotate:none}.ht .fd{opacity:1}}
+</style>
+</head>
+<body>
+<!-- HOW TO EDIT: texts in [brackets] are placeholders. Put photos in an /images folder using the names shown inside each empty photo box. -->
+<div id="bar"></div>
+<nav>
+  <b>🌾 [Building Name]</b>
+  <div><a href="#about">About</a><a href="#units">Apartments</a><a href="#gallery">Gallery</a><a href="#seasons">Seasons</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <figure class="ph hbg" data-n="images/hero.jpg" data-p=".25"><img src="images/hero.jpg" alt="[Describe hero photo]" onerror="this.remove()"></figure>
+  <div class="sun"></div><div class="cd"></div><div class="cd" style="top:34%;animation-delay:-35s;scale:1.4"></div>
+  <canvas id="fx"></canvas>
+  <div class="ht" data-p="-.12">
+    <h1 class="sp">Wake up inside the golden fields</h1>
+    <p class="fd">[One sentence that describes the building and the view.]</p>
+    <a class="btn fd" href="#units">Meet the apartments</a>
+  </div>
+  <svg class="rice" id="r1" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <svg class="rice" id="r2" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" style="height:26vh"></svg>
+  <div class="sc"></div>
+</header>
+
+<section id="about"><div class="in2 two">
+  <figure class="ph tall cl" data-n="images/about.jpg"><img src="images/about.jpg" alt="[Describe photo]" loading="lazy" onerror="this.remove()"></figure>
+  <div>
+    <h2 class="rv">[A headline about the place]</h2>
+    <p class="rv" style="--i:1">[Write the story of the building here. Who built it, why it stands among the rice fields, and what living here feels like in the morning.]</p>
+    <p class="rv" style="--i:2;margin-top:16px">[A second paragraph. Mention quiet, fresh air, light and distance to town.]</p>
+    <div class="stats rv" style="--i:3">
+      <div><b><span class="n" data-n="4">0</span></b>apartments</div>
+      <div><b><span class="n" data-n="2">0</span></b>floors</div>
+      <div><b><span class="n" data-n="360" data-s="°">0</span></b>of green views</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="units" class="dk">
+  <svg class="wv t" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40Q360 0 720 40T1440 40V80H0Z"/></svg>
+  <svg class="wv b" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40Q360 0 720 40T1440 40V80H0Z"/></svg>
+  <div class="in2 two">
+    <div class="bld rv">
+      <div class="roof"></div>
+      <div class="fl"><button class="ap" data-i="2">3</button><button class="ap" data-i="3">4</button></div>
+      <div class="fl"><button class="ap on" data-i="0">1</button><button class="ap" data-i="1">2</button></div>
+      <div class="gr"></div>
+    </div>
+    <div>
+      <h2 class="rv">Four homes, two floors</h2>
+      <div id="pn" class="rv" style="--i:1"></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery"><div class="in2">
+  <h2 class="rv">[Gallery headline]</h2>
+  <p class="rv" style="--i:1">[A short line introducing the photos.]</p>
+  <div class="gal">
+    <figure class="ph cl" data-n="images/g1.jpg"><img src="images/g1.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="ph cl" data-n="images/g2.jpg"><img src="images/g2.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="ph cl" data-n="images/g3.jpg"><img src="images/g3.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="ph cl" data-n="images/g4.jpg"><img src="images/g4.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="ph cl" data-n="images/g5.jpg"><img src="images/g5.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
+    <figure class="ph cl" data-n="images/g6.jpg"><img src="images/g6.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
+  </div>
+</div>
+<div class="mq" aria-hidden="true"><div>Green rice, golden rice, harvest. Green rice, golden rice, harvest. Green rice, golden rice, harvest. Green rice, golden rice, harvest. </div></div>
+</section>
+
+<section id="seasons" class="se"><div class="in2">
+  <h2 class="rv">The view changes all year</h2>
+  <p class="rv" style="--i:1">[Introduce how the fields look through the seasons. The page itself ripens from green to gold as you scroll.]</p>
+  <div class="cards">
+    <article class="card tilt rv"><figure class="ph" data-n="images/s1.jpg"><img src="images/s1.jpg" alt="[Planting season]" loading="lazy" onerror="this.remove()"></figure><h3>Planting</h3><p>[Describe the fresh, bright green months.]</p></article>
+    <article class="card tilt rv" style="--i:1"><figure class="ph" data-n="images/s2.jpg"><img src="images/s2.jpg" alt="[Ripening season]" loading="lazy" onerror="this.remove()"></figure><h3>Ripening</h3><p>[Describe the golden, swaying weeks.]</p></article>
+    <article class="card tilt rv" style="--i:2"><figure class="ph" data-n="images/s3.jpg"><img src="images/s3.jpg" alt="[Harvest season]" loading="lazy" onerror="this.remove()"></figure><h3>Harvest</h3><p>[Describe the brown, open fields after cutting.]</p></article>
+  </div>
+</div></section>
+
+<section id="contact"><div class="in2 two">
+  <div>
+    <h2 class="rv">Come and see it</h2>
+    <p class="rv" style="--i:1">[Address, how to get here, and what to expect on a visit.]</p>
+    <p class="rv" style="--i:2;margin-top:16px">[Phone]<br>[Email]<br>[Visiting hours]</p>
+  </div>
+  <form class="rv" style="--i:1" onsubmit="event.preventDefault();this.innerHTML='<h3>Thank you. We will reply soon.</h3>'">
+    <input placeholder="Your name" required aria-label="Your name">
+    <input type="email" placeholder="Your email" required aria-label="Your email">
+    <textarea rows="4" placeholder="Which apartment interests you?" aria-label="Message"></textarea>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</div></section>
+
+<footer>© [Year] [Building Name]. [Address]</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// hero title: letters rise one by one
+$$('.sp').forEach(e=>{let i=0;e.innerHTML=e.textContent.split(' ').map(w=>`<span class="w">${[...w].map(c=>`<i style="--i:${i++}">${c}</i>`).join('')}</span>`).join(' ')});
+
+// swaying rice stalks (back = gold, front = green)
+function rice(el,n,col,gr,a,b){let s='';for(let i=0;i<n;i++){const x=i*1440/n+Math.random()*16,h=a+Math.random()*(b-a),k=(Math.random()-.5)*34,tx=k*1.6;
+s+=`<g transform="translate(${x} 245)"><g class="st" style="--d:-${(Math.random()*4).toFixed(2)}s;--a:${(2+Math.random()*2).toFixed(2)}s"><path d="M0 0Q${k} ${-h/2} ${tx} ${-h}" stroke="${col}" stroke-width="3" fill="none"/>`;
+for(let j=0;j<6;j++)s+=`<ellipse cx="${tx+(j%2?6:-6)}" cy="${-h+j*11}" rx="4" ry="9" fill="${gr}" transform="rotate(${j%2?35:-35} ${tx} ${-h+j*11})"/>`;
+s+='</g></g>'}el.innerHTML=s}
+rice($('#r1'),70,'#9a7a2e','#e3b44a',90,200);
+rice($('#r2'),55,'#2f5a2c','#86a339',60,150);
+
+// drifting golden grains
+const cv=$('#fx'),cx=cv.getContext('2d');let W,H;const P=[];
+const size=()=>{W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight};size();addEventListener('resize',size);
+for(let i=0;i<60;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*3,v:.25+Math.random()*.7,o:Math.random()*6});
+(function f(t){cx.clearRect(0,0,W,H);for(const p of P){p.y-=p.v;if(p.y<-9){p.y=H+9;p.x=Math.random()*W}
+cx.beginPath();cx.arc(p.x+Math.sin(t/900+p.o)*22,p.y,p.r,0,7);cx.fillStyle=`rgba(255,226,140,${.25+.5*Math.sin(t/500+p.o)**2})`;cx.fill()}
+still||requestAnimationFrame(f)})(0);
+
+// the page ripens from green to straw while scrolling, plus parallax and nav
+const R=document.documentElement,c1=[233,239,207],c2=[243,218,150];
+function sc(){const y=scrollY,p=Math.min(y/(R.scrollHeight-innerHeight||1),1);
+R.style.setProperty('--bg',`rgb(${c1.map((v,i)=>~~(v+(c2[i]-v)*p))})`);
+$('#bar').style.transform=`scaleX(${p})`;$('nav').classList.toggle('s',y>60);
+if(!still&&y<innerHeight*1.2)$$('[data-p]').forEach(e=>e.style.transform=`translateY(${y*e.dataset.p}px)`)}
+addEventListener('scroll',sc,{passive:true});sc();
+
+// reveal on scroll and number counters
+const count=e=>{const n=+e.dataset.n,t0=performance.now();(function f(t){const k=Math.min((t-t0)/1600,1);e.textContent=~~(n*(1-(1-k)**3));k<1&&requestAnimationFrame(f)})(t0)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.classList.contains('n')&&count(e.target);io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv,.cl,.n').forEach(e=>io.observe(e));
+
+// 3D tilt on season cards
+$$('.tilt').forEach(e=>{e.onmousemove=v=>{const r=e.getBoundingClientRect(),a=(v.clientX-r.left)/r.width-.5,b=(v.clientY-r.top)/r.height-.5;e.style.transform=`perspective(800px) rotateY(${a*10}deg) rotateX(${-b*10}deg) translateY(-6px)`};e.onmouseleave=()=>e.style.transform=''});
+
+// interactive building: click a lit window
+const A=[['Apartment 1','Ground floor','[00] m²','[0] bedrooms','[Describe this apartment: layout, light, terrace or garden, the view over the fields.]'],
+['Apartment 2','Ground floor','[00] m²','[0] bedrooms','[Describe this apartment.]'],
+['Apartment 3','Upper floor','[00] m²','[0] bedrooms','[Describe this apartment: balcony, sunrise view, ceiling height.]'],
+['Apartment 4','Upper floor','[00] m²','[0] bedrooms','[Describe this apartment.]']];
+function pick(i){const a=A[i],p=$('#pn');$$('.ap').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
+p.innerHTML=`<h3 style="font-size:2rem;margin-bottom:16px">${a[0]}</h3><span>${a[1]}</span><span>${a[2]}</span><span>${a[3]}</span><p>${a[4]}</p>`;
+p.classList.remove('a');void p.offsetWidth;p.classList.add('a')}
+$$('.ap').forEach(b=>b.onclick=()=>pick(+b.dataset.i));pick(0);
+</script>
+</body>
+</html>
