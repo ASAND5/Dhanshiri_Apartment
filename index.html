@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{--g9:#1c3524;--g7:#3d6b34;--g5:#86a339;--au:#d9a23b;--st:#efd68f;--br:#8a5a2b;--b9:#2e1f10;--bg:#e9efcf;--r:24px}
+:root{--g9:#1c3524;--g7:#3d6b34;--g5:#86a339;--ri:#c97d12;--au:#d9a23b;--st:#efd68f;--br:#8a5a2b;--b9:#2e1f10;--bg:#e9efcf;--r:24px;}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{font:300 18px/1.75 Figtree,system-ui,sans-serif;color:var(--b9);background:var(--bg);overflow-x:hidden}
@@ -60,8 +60,9 @@ nav div a:hover::after{scale:1}
 @keyframes dr{to{translate:calc(100vw + 600px) 0}}
 #fx{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
 .ht{position:relative;z-index:4;padding:0 6vw 120px}
-.ht h1{font-size:clamp(2.8rem,9vw,7.5rem);text-shadow:0 6px 40px #0006}
-.ht p{margin:26px auto 36px;font-size:1.25rem;text-shadow:0 2px 20px #0008}
+.ht h1{font-size:clamp(2.8rem,9vw,7.5rem)}
+.ht p{margin:26px auto 36px;font-size:1.25rem}
+@media(max-width:760px){.ht h1{font-size:clamp(2rem,10vw,2.8rem)}.ht p{font-size:1.05rem}}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em}
 .w i{display:inline-block;font-style:normal;translate:0 115%;rotate:9deg;animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.3s + var(--i)*.045s)}
 @keyframes up{to{translate:0 0;rotate:0deg}}
@@ -74,7 +75,7 @@ nav div a:hover::after{scale:1}
 .sc::after{content:'';position:absolute;inset:0;background:var(--au);animation:sd 2s infinite}
 @keyframes sd{from{translate:0 -100%}to{translate:0 100%}}
 .ht .btn{margin:6px}
-.btn.o{background:#ffffff26;color:#fff;border:2px solid #fff8;backdrop-filter:blur(6px)}
+.btn.o{background:none;color:#fff;border:2px solid #fff8}
 footer a{color:var(--st);text-decoration:none}
 footer a:hover{text-decoration:underline}  
   
@@ -85,15 +86,15 @@ footer a:hover{text-decoration:underline}
 .tall{aspect-ratio:4/5}
   
 /* building */
-.dk{background:var(--b9);color:#f6ecc9}
+.dk{background:var(--ri);color:var(--b9)}
 .wv{position:absolute;left:0;width:100%;height:80px;fill:var(--b9)}
 .wv.t{top:-79px}.wv.b{bottom:-79px;scale:1 -1}
 .wv path{animation:wf 9s ease-in-out infinite alternate}
 @keyframes wf{to{translate:-5% 0}}
-#pn{background:#ffffff12;border:1px solid #ffffff22;border-radius:var(--r);padding:40px;min-height:300px}
+#pn{background:#2e1f1014;border:1px solid #2e1f1033;border-radius:var(--r);padding:40px;min-height:300px}
 #pn.a{animation:pi .7s}
 @keyframes pi{from{opacity:0;translate:30px 0}}
-#pn span{display:inline-block;margin:0 10px 16px 0;padding:4px 16px;border-radius:99px;background:var(--au);color:var(--b9);font-size:.9rem;font-weight:600}
+#pn span{display:inline-block;margin:0 10px 16px 0;padding:4px 16px;border-radius:99px;background:var(--b9);color:#f6ecc9;font-size:.9rem;font-weight:600}
 
 /* blueprint building */
 .bp{width:100%;height:auto;display:block;border-radius:var(--r);background:#1b4a36;border:1px solid #ffffff30;box-shadow:0 30px 80px #0006}
@@ -149,6 +150,8 @@ input:focus,textarea:focus{outline:0;border-color:var(--g7);padding-left:14px}
 footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;font-size:.95rem}
 @media(max-width:760px){nav div a:not(:last-child){display:none}section{padding-block:90px}.gal .ph{grid-row:auto!important;grid-column:auto!important}.sun{width:180px;height:180px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.cl{opacity:1;translate:none;clip-path:none}.w i{translate:none;rotate:none}.ht .fd{opacity:1}}
+.owner{width:clamp(200px,28vw,280px);aspect-ratio:1;min-height:0;border-radius:50%;border:8px solid #fff;box-shadow:0 18px 50px #2e1f1040;margin-bottom:32px}
+.owner img{object-position:center 20%}
 </style>
 </head>
   
@@ -175,7 +178,7 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 </header>
 
 <section id="about"><div class="in2 two">
-  <figure class="ph tall cl" data-n="images/about.jpg"><img src="images/Gemini_Generated_Image_b9ffffb9ffffb9ff.jfif" alt="Face-view" loading="lazy" onerror="this.remove()"></figure>
+  <figure class="ph tall cl" data-n="images/about.jpg"><img src="images/Basa.jpg" alt="Face-view" loading="lazy" onerror="this.remove()"></figure>
   <div>
     <h2 class="rv">Dhanshiri: A Journey from 2019</h2>
     <p class="rv" style="--i:1">Dhanshiri was built, funded, and closely supervised by the owner, M A Wadud Miah. It opened for rentals in 2020. Since then, 5 families have lived here.</p>
@@ -214,21 +217,23 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
     <figure class="ph cl" data-n="images/g6.jpg"><img src="images/g6.jpg" alt="[Describe]" loading="lazy" onerror="this.remove()"></figure>
   </div>
 </div-->
-<div class="mq" aria-hidden="true"><div>Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens.</div></div>
+<div class="mq" aria-hidden="true"><div>of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your stay with family. Safe and sound. Minimal and modern designs. Beautiful life in the middle of greens. Enjoy your</div></div>
 </section>
 
 <section id="area" class="nb"><div class="in2">
   <h2 class="rv">Neighbourhood</h2>
   <p class="rv" style="--i:1">Situated close to the masjid, schools, college, bazar, and most importantly, the Dhaka-Rangpur highway.</p>
   <div class="tiles">
-    <div class="tile rv"><i class="fa-solid fa-road"></i><b><span class="n" data-n="300" data-s=" yd">0</span></b><small>from the highway</small><p>Walkable distance and 60 feet wide paved road.</p></div>
-    <div class="tile rv" style="--i:1"><i class="fa-solid fa-mosque"></i><b><span class="n" data-n="200" data-s=" yd">0</span></b><small>to Durgapur Central Jam-e Mosque</small><p>A 1-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:2"><i class="fa-solid fa-school"></i><b><span class="n" data-n="500" data-s=" yd">0</span></b><small>to Shathibari ML High School</small><p>A 2-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:3"><i class="fa-solid fa-store"></i><b>0.5 km</b><small>to Shathibari Bazar</small><p>Shathibari Bazar has everything and is soon to be a Poura Shova.</p></div>
-    <div class="tile rv" style="--i:4"><i class="fa-solid fa-school"></i><b><span class="n" data-n="1000" data-s=" yd">0</span></b><small>to Shathibari College</small><p>A 10-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:5"><i class="fa-solid fa-city"></i><b>25 km</b><small>to Rangpur City</small><p>Nearest city; takes less than an hour to go.</p></div>
-    <div class="tile rv" style="--i:6"><i class="fa-solid fa-landmark"></i><b>300 km</b><small>to Dhaka City</small><p>Capital of Bangladesh; takes 5 to 6 hours to go.</p></div>
-    <div class="tile rv" style="--i:7"><i class="fa-solid fa-star"></i><b>400 and 700 km</b><small>to Thimpu and Kathmandu</small><p>The nearest foreign capitals.</p></div>
+    <div class="tile rv"><i class="fa-solid fa-road"></i><b><span class="n" data-n="300" data-s=" yd">0</span></b>from the highway<p>Walkable distance and 60 feet wide paved road.</p></div>
+    <div class="tile rv" style="--i:1"><i class="fa-solid fa-mosque"></i><b><span class="n" data-n="200" data-s=" yd">0</span></b>to Durgapur Central Jam-e Mosque<p>A 1-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:2"><i class="fa-solid fa-school"></i><b><span class="n" data-n="500" data-s=" yd">0</span></b>to Shathibari ML High School<p>A 2-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:3"><i class="fa-solid fa-store"></i><b>0.5 km</b>to Shathibari Bazar<p>Shathibari Bazar has everything and is soon to be a Poura Shova.</p></div>
+    <div class="tile rv" style="--i:4"><i class="fa-solid fa-school"></i><b><span class="n" data-n="1000" data-s=" yd">0</span></b>to Shathibari College<p>A 10-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:5"><i class="fa-solid fa-bolt"></i><b>1 km</b>to Palli Bidyut Office<p>Utility and complain center; takes ten minutes to go.</p></div>
+    <div class="tile rv" style="--i:6"><i class="fa-solid fa-hospital"></i><b>5 km</b>to Upazila Health Complex<p>Nearest hospital; takes half an hour to go.</p></div>
+    <div class="tile rv" style="--i:7"><i class="fa-solid fa-city"></i><b>25 km</b>to Rangpur City<p>Nearest city; takes less than an hour to go.</p></div>
+    <div class="tile rv" style="--i:8"><i class="fa-solid fa-landmark"></i><b>300 km</b>to Dhaka City<p>Capital of Bangladesh; takes 5 to 6 hours to go.</p></div>
+    <div class="tile rv" style="--i:9"><i class="fa-solid fa-star"></i><b>400 and 700 km</b>to Thimpu and Kathmandu<p>The nearest foreign capitals.</p></div>
   </div>
 </div></section>
 
@@ -244,6 +249,7 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
 
 <section id="contact"><div class="in2 two">
   <div>
+    <figure class="ph owner rv" data-n="images/Abbu.jpg"><img src="images/Abbu.jpg" alt="M A Wadud Miah, BPP, owner" loading="lazy" onerror="this.remove()"></figure>
     <h2 class="rv">Pay a visit or talk to the owner</h2>
     <p class="rv" style="--i:1">Meet M A Wadud Miah, BPP</br>Owner</br>MWO (Rtd.), Bangladesh Air Force</p>
     <p class="rv" style="--i:2;margin-top:16px">+88 01678-044251<br><a href="mailto:aanubaf20@gmail.com">ranubaf20@gmail.com</a></p>
@@ -266,13 +272,13 @@ const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
 // hero title: letters rise one by one
 $$('.sp').forEach(e=>{let i=0;e.innerHTML=e.textContent.split(' ').map(w=>`<span class="w">${[...w].map(c=>`<i style="--i:${i++}">${c}</i>`).join('')}</span>`).join(' ')});
 
-// swaying rice stalks (back = gold, front = green)
-function rice(el,n,col,gr,a,b){let s='';for(let i=0;i<n;i++){const x=i*1440/n+Math.random()*16,h=a+Math.random()*(b-a),k=(Math.random()-.5)*34,tx=k*1.6;
+// swaying rice stalks (back = gold, front = green); fewer stalks on narrow screens, same look
+function rice(el,n,col,gr,a,b){const r=el.getBoundingClientRect(),W=innerWidth<900?Math.round(r.width*240/r.height):1440;if(W<1440)n=Math.round(n*W/1440);el.setAttribute('viewBox',`0 0 ${W} 240`);let s='';for(let i=0;i<n;i++){const x=i*W/n+Math.random()*16,h=a+Math.random()*(b-a),k=(Math.random()-.5)*34,tx=k*1.6;
 s+=`<g transform="translate(${x} 245)"><g class="st" style="--d:-${(Math.random()*4).toFixed(2)}s;--a:${(2+Math.random()*2).toFixed(2)}s"><path d="M0 0Q${k} ${-h/2} ${tx} ${-h}" stroke="${col}" stroke-width="3" fill="none"/>`;
 for(let j=0;j<6;j++)s+=`<ellipse cx="${tx+(j%2?6:-6)}" cy="${-h+j*11}" rx="4" ry="9" fill="${gr}" transform="rotate(${j%2?35:-35} ${tx} ${-h+j*11})"/>`;
 s+='</g></g>'}el.innerHTML=s}
-rice($('#r1'),70,'#9a7a2e','#e3b44a',90,200);
-rice($('#r2'),55,'#2f5a2c','#86a339',60,150);
+const mk=()=>{rice($('#r1'),70,'#9a7a2e','#e3b44a',90,200);rice($('#r2'),55,'#2f5a2c','#86a339',60,150)};
+mk();let lw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==lw){lw=innerWidth;mk()}});
 
 // drifting golden grains
 const cv=$('#fx'),cx=cv.getContext('2d');let W,H;const P=[];
@@ -282,10 +288,9 @@ for(let i=0;i<60;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:1+Math.random
 cx.beginPath();cx.arc(p.x+Math.sin(t/900+p.o)*22,p.y,p.r,0,7);cx.fillStyle=`rgba(255,226,140,${.25+.5*Math.sin(t/500+p.o)**2})`;cx.fill()}
 still||requestAnimationFrame(f)})(0);
 
-// the page ripens from green to straw while scrolling, plus parallax and nav
-const R=document.documentElement,c1=[233,239,207],c2=[243,218,150];
+// scroll progress bar, nav and parallax
+const R=document.documentElement;
 function sc(){const y=scrollY,p=Math.min(y/(R.scrollHeight-innerHeight||1),1);
-R.style.setProperty('--bg',`rgb(${c1.map((v,i)=>~~(v+(c2[i]-v)*p))})`);
 $('#bar').style.transform=`scaleX(${p})`;$('nav').classList.toggle('s',y>60);
 if(!still&&y<innerHeight*1.2)$$('[data-p]').forEach(e=>e.style.transform=`translateY(${y*e.dataset.p}px)`)}
 addEventListener('scroll',sc,{passive:true});sc();
