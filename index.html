@@ -327,12 +327,12 @@ $('#bp').innerHTML=[[0,0],[70,0],[70,30],[0,30]].map(c=>ln([...c,0],[...c,32],'g
 +ln([-5,0,0],[-5,30,0])+`<text class="ts" transform="translate(${m2[0]} ${m2[1]+17}) rotate(16)">east–west</text>`})();
   
 // apartment details shown in the panel (edit the [brackets])
-const A=[['Apartment 1','Ground floor, North','≈ 28 × 15 ft','1 bedroom','Mini unit with 2 rooms, kitchen, and a bathroom. A beautiful green view of the east side of the building.','Parking bay 28 × 15 ft'],
-['Apartment 2','Ground floor, South','≈ 28 × 30 ft','2 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.'],
-['Apartment 3','Upper floor, North','≈ 28 × 30 ft','3 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and north side of the building.'],
-['Apartment 4','Upper floor, South','≈ 28 × 30 ft','2 bedrooms','2 balconies, huge dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.']];
+const A=[['Apartment 1','Ground floor, North','1 bedroom','Mini unit with 2 rooms, kitchen, and a bathroom. A beautiful green view of the east side of the building.','Parking bay'],
+['Apartment 2','Ground floor, South','2 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.'],
+['Apartment 3','Upper floor, North','3 bedrooms','2 balconies, dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and north side of the building.'],
+['Apartment 4','Upper floor, South','2 bedrooms','2 balconies, huge dining space, kitchen, and 2 bathrooms. A beautiful green view of the east and south side of the building.']];
 function pick(i){const a=A[i],p=$('#pn');$$('.flat').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
-p.innerHTML=`<h3 style="font-size:2rem;margin-bottom:16px">${a[0]}</h3>${a.slice(1,4).concat(a[5]||[]).map(t=>`<span>${t}</span>`).join('')}<p>${a[4]}</p>`;
+p.innerHTML=`<h3 style="font-size:2rem;margin-bottom:16px">${a[0]}</h3>${[a[1],a[2],a[4]].filter(Boolean).map(t=>`<span>${t}</span>`).join('')}<p>${a[3]}</p>`;
 p.classList.remove('a');void p.offsetWidth;p.classList.add('a')}
 $$('.flat').forEach(b=>{b.onclick=()=>pick(+b.dataset.i);b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(+b.dataset.i)}}});pick(0);
 
