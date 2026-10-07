@@ -224,16 +224,16 @@ footer{background:var(--b9);color:#f6ecc9aa;text-align:center;padding:50px 6vw;f
   <h2 class="rv">Neighbourhood</h2>
   <p class="rv" style="--i:1">Situated close to the masjid, schools, college, bazar, and most importantly, the Dhaka-Rangpur highway.</p>
   <div class="tiles">
-    <div class="tile rv"><i class="fa-solid fa-road"></i><b><span class="n" data-n="300" data-s=" yd">0</span></b>from the highway<p>Walkable distance and 60 feet wide paved road.</p></div>
-    <div class="tile rv" style="--i:1"><i class="fa-solid fa-mosque"></i><b><span class="n" data-n="200" data-s=" yd">0</span></b>to Durgapur Central Jam-e Mosque<p>A 1-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:2"><i class="fa-solid fa-school"></i><b><span class="n" data-n="500" data-s=" yd">0</span></b>to Shathibari ML High School<p>A 2-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:3"><i class="fa-solid fa-store"></i><b>0.5 km</b>to Shathibari Bazar<p>Shathibari Bazar has everything and is soon to be a Poura Shova.</p></div>
-    <div class="tile rv" style="--i:4"><i class="fa-solid fa-school"></i><b><span class="n" data-n="1000" data-s=" yd">0</span></b>to Shathibari College<p>A 10-minutes-walk distance.</p></div>
-    <div class="tile rv" style="--i:5"><i class="fa-solid fa-bolt"></i><b>1 km</b>to Palli Bidyut Office<p>Utility and complain center; takes ten minutes to go.</p></div>
-    <div class="tile rv" style="--i:6"><i class="fa-solid fa-hospital"></i><b>5 km</b>to Upazila Health Complex<p>Nearest hospital; takes half an hour to go.</p></div>
-    <div class="tile rv" style="--i:7"><i class="fa-solid fa-city"></i><b>25 km</b>to Rangpur City<p>Nearest city; takes less than an hour to go.</p></div>
-    <div class="tile rv" style="--i:8"><i class="fa-solid fa-landmark"></i><b>300 km</b>to Dhaka City<p>Capital of Bangladesh; takes 5 to 6 hours to go.</p></div>
-    <div class="tile rv" style="--i:9"><i class="fa-solid fa-star"></i><b>400 and 700 km</b>to Thimpu and Kathmandu<p>The nearest foreign capitals.</p></div>
+    <div class="tile rv"><i class="fa-solid fa-road"></i><b><span class="n" data-n="300" data-s=" yd">0</span></b>from the highway.<p>Walkable distance and 60 feet wide paved road.</p></div>
+    <div class="tile rv" style="--i:1"><i class="fa-solid fa-mosque"></i><b><span class="n" data-n="200" data-s=" yd">0</span></b>to Durgapur Central Jam-e Mosque.<p>A 1-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:2"><i class="fa-solid fa-school"></i><b><span class="n" data-n="500" data-s=" yd">0</span></b>to Shathibari ML High School.<p>A 2-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:3"><i class="fa-solid fa-store"></i><b>0.5 km</b>to Shathibari Bazar.<p>Shathibari Bazar has everything and is soon to be a Poura Shova.</p></div>
+    <div class="tile rv" style="--i:4"><i class="fa-solid fa-school"></i><b><span class="n" data-n="1000" data-s=" yd">0</span></b>to Shathibari College.<p>A 10-minutes-walk distance.</p></div>
+    <div class="tile rv" style="--i:5"><i class="fa-solid fa-bolt"></i><b>1 km</b>to Palli Bidyut Office.<p>Utility and complain center; takes ten minutes to go.</p></div>
+    <div class="tile rv" style="--i:6"><i class="fa-solid fa-hospital"></i><b>5 km</b>to Upazila Health Complex.<p>Nearest hospital; takes half an hour to go.</p></div>
+    <div class="tile rv" style="--i:7"><i class="fa-solid fa-city"></i><b>25 km</b>to Rangpur City.<p>Nearest city; takes less than an hour to go.</p></div>
+    <div class="tile rv" style="--i:8"><i class="fa-solid fa-landmark"></i><b>300 km</b>to Dhaka City.<p>Capital of Bangladesh; takes 5 to 6 hours to go.</p></div>
+    <div class="tile rv" style="--i:9"><i class="fa-solid fa-star"></i><b>400 and 700 km</b>to Thimpu and Kathmandu.<p>The nearest foreign capitals.</p></div>
   </div>
 </div></section>
 
@@ -315,16 +315,16 @@ const walls=z=>pg([[70,0,z],[70,30,z],[70,30,z+8],[70,0,z+8]],'bw')+pg([[0,30,z]
 const stair=z=>pg([[31,6,z],[39,6,z],[39,23,z],[31,23,z]],'bw')+[...Array(8)].map((_,k)=>ln([31,6+k*2.4,z],[39,6+k*2.4,z])).join('');
 const flat=(i,x0,z,d=30,y0=0)=>{const k=d/30,c=P(x0+14,y0+d/2,z),w=(a,b)=>pg([[x0+a[0],y0+a[1]*k,z],[x0+b[0],y0+b[1]*k,z],[x0+b[0],y0+b[1]*k,z+4],[x0+a[0],y0+a[1]*k,z+4]],'wl');
 return `<g class="flat" data-i="${i}" tabindex="0" role="button" aria-label="Apartment ${i+1}">`+pg([[x0,y0,z],[x0+28,y0,z],[x0+28,y0+d,z],[x0,y0+d,z]],'fz')+w([0,13],[15,13])+w([15,0],[15,22])+w([15,22],[28,22])
-+`<text class="tn" x="${c[0]}" y="${c[1]}">${i+1}</text><text class="ts" x="${c[0]}" y="${c[1]+17}">28 × ${d} ft</text></g>`};
++`<text class="tn" x="${c[0]}" y="${c[1]}">${i+1}</text></g>`};
 const park=(z,y0)=>{const c=P(14,y0+7.5,z);return pg([[0,y0,z],[28,y0,z],[28,y0+15,z],[0,y0+15,z]],'pk')+ln([3,y0+2,z],[3,y0+13,z],'gd')+ln([25,y0+2,z],[25,y0+13,z],'gd')
-+`<text class="ts" x="${c[0]}" y="${c[1]-2}">Parking</text><text class="ts" x="${c[0]}" y="${c[1]+14}">28 × 15 ft</text>`};
++`<text class="ts" x="${c[0]}" y="${c[1]-2}">Parking</text>`};
 const lv=(z,a,b,d=30)=>slab(z,'sl')+walls(z)+stair(z)+flat(a,0,z,d,d<30?15-PK:0)+(d<30?park(z,PK):'')+flat(b,42,z);
 const cap=(t,y)=>`<text class="cp" x="8" y="${y}">${t}</text>`;
 const m1=P(35,-5,0),m2=P(-5,15,0);
 $('#bp').innerHTML=[[0,0],[70,0],[70,30],[0,30]].map(c=>ln([...c,0],[...c,32],'gd')).join('')
 +lv(0,0,1,15)+lv(16,2,3)+slab(32,'rf')+cap('Ground floor',286)+cap('Upper floor',206)+cap('Rooftop',126)
-+ln([0,-5,0],[70,-5,0])+`<text class="ts" transform="translate(${m1[0]} ${m1[1]+17}) rotate(-16)">70 ft north–south</text>`
-+ln([-5,0,0],[-5,30,0])+`<text class="ts" transform="translate(${m2[0]} ${m2[1]+17}) rotate(16)">30 ft east–west</text>`})();
++ln([0,-5,0],[70,-5,0])+`<text class="ts" transform="translate(${m1[0]} ${m1[1]+17}) rotate(-16)">north–south</text>`
++ln([-5,0,0],[-5,30,0])+`<text class="ts" transform="translate(${m2[0]} ${m2[1]+17}) rotate(16)">east–west</text>`})();
   
 // apartment details shown in the panel (edit the [brackets])
 const A=[['Apartment 1','Ground floor, North','≈ 28 × 15 ft','1 bedroom','Mini unit with 2 rooms, kitchen, and a bathroom. A beautiful green view of the east side of the building.','Parking bay 28 × 15 ft'],
