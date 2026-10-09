@@ -297,8 +297,10 @@ addEventListener('scroll',sc,{passive:true});sc();
 
 // reveal on scroll and number counters
 const count=e=>{const n=+e.dataset.n,t0=performance.now();(function f(t){const k=Math.min((t-t0)/1600,1);e.textContent=~~(n*(1-(1-k)**3));k<1&&requestAnimationFrame(f)})(t0)};
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.classList.contains('n')&&count(e.target);io.unobserve(e.target)}}),{threshold:.15});
-$$('.rv,.cl,.n').forEach(e=>io.observe(e));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target,L=[...(t._c||[])];if(t.matches('.rv,.n'))L.push(t);
+L.forEach(x=>{x.classList.add('in');x.classList.contains('n')&&count(x)});io.unobserve(t)}),{threshold:.15});
+$$('.rv,.n').forEach(e=>io.observe(e));
+$$('.cl').forEach(e=>{const p=e.parentElement;(p._c=p._c||[]).push(e);io.observe(p)});
 
 // 3D tilt on season cards
 $$('.tilt').forEach(e=>{e.onmousemove=v=>{const r=e.getBoundingClientRect(),a=(v.clientX-r.left)/r.width-.5,b=(v.clientY-r.top)/r.height-.5;e.style.transform=`perspective(800px) rotateY(${a*10}deg) rotateX(${-b*10}deg) translateY(-6px)`};e.onmouseleave=()=>e.style.transform=''});
